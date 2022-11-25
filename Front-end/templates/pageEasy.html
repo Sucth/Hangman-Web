@@ -1,19 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<img src="../Img/THE%20HANGMAN.png">
+<img src="https://fontmeme.com/permalink/221125/fc9a4a23fa3412e114b26d26a1f90ed1.png" id="thg">
 <style>
+    #thg {
+        position: relative;
+        left: 15%;
+    }
     body {
         width: 1485px;
         height: 750px;
         margin: 0 auto;
-        background: #000 url("../Img/backgroungStar.jpg");
+        background: #000 url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png");
         padding: 0 20px 20px 20px;
-        border: 5px solid green;
+        border: 5px solid cyan;
     }
     img {
         position: relative ;
         left: 120px;
         top: 50px
+    }
+    #chooseword {
+        position: relative;
+        top: 10%;
+        left: 5%;
+    }
+    #story {
+        position: relative;
+        top: 10%;
+        left: 10%;
+        width: 250px;
+        height: 50px;
+        background-color: cyan;
+    }
+    #select {
+        position: relative;
+        top: 20%;
+        left: 22%;
+    }
+    #p {
+        position: relative;
+        top: 1%;
+        left: 29%;
+    }
+    #life {
+        position: relative;
+        bottom: 55%;
+        left: 50%;
+    }
+    .larger {
+        position: relative;
+        left: 61%;
+        bottom: 5%;
+        font-size: xxx-large;
+        letter-spacing: 15px;
+        color: cyan;
     }
 </style>
 <head>
@@ -21,6 +61,19 @@
     <title>Title</title>
 </head>
 <body>
+<link rel="stylesheet" type="text/css" href="../stylesheets/easyPage.css">
+<div id="chooseword" >
+    <p id="p">CHOOSE WORD</p>
+    <textarea id="story">
 
+    </textarea>
+    <button id="select">
+        SELECT
+    </button>
+</div>
+<p id="life">
+    <img src="https://fontmeme.com/permalink/221125/169071ad495f2dffc1dfb7eb2eae9809.png">
+</p>
+<h1 class="larger">W__D</h1>
 </body>
 </html>

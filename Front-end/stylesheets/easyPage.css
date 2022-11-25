@@ -1,0 +1,30 @@
+#chooseword {
+    border:10px solid cyan;
+    border-radius: 10px 40px 40px 10px;
+    width: 350px;
+    height: 400px;
+    background-color:cyan;
+}
+#inchoose {
+    border: groove 1em white;
+    border-radius: 2em;
+    width: 250px;
+    height: 50px;
+    background-color: transparent;
+}
+
+#select {
+    background-image: linear-gradient(to right, deepskyblue 0%, lightskyblue  51%, cyan  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border-radius: 10px;
+    display: block;
+}
+
+#select:hover {
+    background-position: right center;
+}
