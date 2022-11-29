@@ -55,6 +55,9 @@
         letter-spacing: 15px;
         color: cyan;
     }
+    h1 {
+        color: cyan;
+    }
 </style>
 <head>
     <meta charset="UTF-8">
@@ -64,16 +67,20 @@
 <link rel="stylesheet" type="text/css" href="../stylesheets/easyPage.css">
 <div id="chooseword" >
     <p id="p">CHOOSE WORD</p>
-    <textarea id="story">
+    <form action="/EasyMode" method="post">
+        <input id="story" name="letter">
+        <button id="select" type="submit">
+            SELECT
+        </button>
 
-    </textarea>
-    <button id="select">
-        SELECT
-    </button>
+
+    </form>
+
 </div>
-<p id="life">
+<div id="life">
     <img src="https://fontmeme.com/permalink/221125/169071ad495f2dffc1dfb7eb2eae9809.png">
-</p>
-<h1 class="larger">W__D</h1>
+    <h1> Lifes are here {{ .Lifes }} </h1>
+</div>
+<h1 class="larger"> {{ .LWord }} </h1>
 </body>
 </html>

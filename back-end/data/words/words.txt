@@ -1,0 +1,14 @@
+chaise
+bureau
+tableau
+craie
+ordinateur
+etudiant
+chargeur
+oignon
+cuisine
+couteau
+fourchette
+bougie
+verre
+sac
