@@ -18,7 +18,7 @@ func Launchserver() {
 	http.ListenAndServe(":8080", nil)
 }
 func Accueil(w http.ResponseWriter, r *http.Request) {
-	var templates = template.Must(template.ParseFiles("Front-end/templates/homePage.html"))
+	var templates = template.Must(template.ParseFiles("Front-end/templates/homePage.gohtml"))
 	err := templates.Execute(w, nil)
 	if err != nil {
 		fmt.Println(err)
@@ -26,7 +26,7 @@ func Accueil(w http.ResponseWriter, r *http.Request) {
 }
 
 func difficultyPage(w http.ResponseWriter, r *http.Request) {
-	var templates = template.Must(template.ParseFiles("Front-end/templates/pageDifficulty.html"))
+	var templates = template.Must(template.ParseFiles("Front-end/templates/pageDifficulty.gohtml"))
 	err := templates.Execute(w, nil)
 	if err != nil {
 		fmt.Println(err)
@@ -61,7 +61,7 @@ func EasyMode(w http.ResponseWriter, r *http.Request) {
 			Lettersusd: Lettersused,
 		}
 
-		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.html"))
+		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.gohtml"))
 		err := templates.Execute(w, data)
 		if err != nil {
 			fmt.Println(err)
@@ -69,7 +69,7 @@ func EasyMode(w http.ResponseWriter, r *http.Request) {
 
 	} else if Win == true {
 		data := HangmanData{Win: true, LWord: "You Won !"}
-		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.html"))
+		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.gohtml"))
 		err := templates.Execute(w, data)
 		if err != nil {
 			fmt.Println(err)
@@ -77,7 +77,7 @@ func EasyMode(w http.ResponseWriter, r *http.Request) {
 
 	} else {
 		data := HangmanData{Lifes: 0, LWord: "You lost"}
-		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.html"))
+		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.gohtml"))
 		err := templates.Execute(w, data)
 		if err != nil {
 			fmt.Println(err)
@@ -87,7 +87,7 @@ func EasyMode(w http.ResponseWriter, r *http.Request) {
 }
 
 func MediumMode(w http.ResponseWriter, r *http.Request) {
-	var templates = template.Must(template.ParseFiles("Front-end/templates/pageMedium.html"))
+	var templates = template.Must(template.ParseFiles("Front-end/templates/pageMedium.gohtml"))
 	err := templates.Execute(w, nil)
 	if err != nil {
 		fmt.Println(err)
@@ -95,7 +95,7 @@ func MediumMode(w http.ResponseWriter, r *http.Request) {
 }
 
 func HardMode(w http.ResponseWriter, r *http.Request) {
-	var templates = template.Must(template.ParseFiles("Front-end/templates/pageHard.html"))
+	var templates = template.Must(template.ParseFiles("Front-end/templates/pageHard.gohtml"))
 	err := templates.Execute(w, nil)
 	if err != nil {
 		fmt.Println(err)
