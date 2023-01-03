@@ -41,7 +41,7 @@ type HangmanData struct {
 }
 
 var Liifes = 10
-var Word = backend.ChooseWord()
+var Word = "banane"
 var Lword = backend.HideWord(Word)
 var Win = false
 var Lettersused string
