@@ -1,63 +1,35 @@
-/* Animation properties */
+body {
+    margin: 0 auto;
+    width: 1450px;
+    height: 600px;
+    background: url("https://i.pinimg.com/originals/f3/8e/41/f38e413a04321ed0f6b848568ddc2650.jpg");
+    padding: 0 20px 200px 20px;
+}
+
 .star {
     animation: star 10s ;
 }
-.wars {
-    animation: wars 10s ;
-}
 
 @keyframes star {
-    0% {
-        opacity: 0;
-        transform: scale(1.5) translateY(-0.75em);
-    }
-    20% {
-        opacity: 1;
-    }
-    89% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: translateZ(-1000em);
-    }
+0% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-0.75em);
 }
-
-@keyframes wars {
-    0% {
-        opacity: 0;
-        transform: scale(1.5) translateY(0.5em);
-    }
-    20% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: translateZ(-1000em);
-    }
+20% {
+    opacity: 1;
 }
-
+89% {
+    opacity: 1;
+    transform: scale(1);
+}
+100% {
+    opacity: 0;
+    transform: translateZ(-1000em);
+}
+}
 
 .starwars-demo {
     perspective: 800px;
-}
-
-.starwars-demo {
-    height: 17em;
-    left: 50%;
-    position: absolute;
-    top: 53%;
-    transform: translate(-50%, -50%);
-    width: 34em;
-}
-
-img {
-    width: 100%;
 }
 
 .star, .wars, .byline {
@@ -68,26 +40,26 @@ img {
     top: -0.75em;
 }
 
-.wars {
-    bottom: -0.5em;
+#the {
+    position: relative;
+    left: 35%;
+    top: 50%;
+
 }
 
-.byline {
-    color: #fff;
-    font-family: "ITC Serif Gothic", Lato;
-    font-size: 2.25em;
-    left: -2em;
-    letter-spacing: 0.4em;
-    right: -2em;
-    text-align: center;
-    text-transform: uppercase;
-    top: 29%;
+#start{
+    position: relative ;
+    left: 120px;
+    top: 50px
 }
-#the{
-    opacity: 0;
+button {
+    position: relative;
+    bottom: 10%;
+    left: 12%;
 }
-#hangman{
-    opacity: 0;
+a{
+    text-decoration: none;
+    color: white;
 }
 
 .glow-on-hover {
@@ -159,27 +131,4 @@ img {
     text-align: center;
     display: block;
     text-decoration: none;
-}
-
-body {
-    margin: 0 auto;
-    width: 1450px;
-    height: 650px;
-    background: #000 url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png");
-    padding: 0 20px 200px 20px;
-    border: 5px solid yellow;
-}
-#start{
-    position: relative ;
-    left: 120px;
-    top: 50px
-}
-button {
-    position: relative;
-    top: 5%;
-    left: 43%;
-}
-a{
-    text-decoration: none;
-    color: white;
 }

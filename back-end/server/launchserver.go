@@ -1,7 +1,7 @@
 package backend
 
 import (
-	backend "HangmanWeb/back-end/hangmanClassic"
+	backend "HangmanWeb/hangman-web/back-end/hangmanClassic"
 	"fmt"
 	"html/template"
 	"net/http"
