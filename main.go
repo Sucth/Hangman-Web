@@ -1,8 +1,6 @@
 package main
 
-import (
-	backend "HangmanWeb/back-end/server"
-)
+import backend "HangmanWeb/hangman-web/back-end/server"
 
 func main() {
 	backend.Launchserver()
