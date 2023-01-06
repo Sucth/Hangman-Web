@@ -36,15 +36,17 @@ func difficultyPage(w http.ResponseWriter, r *http.Request) {
 type HangmanData struct {
 	Lifes      int
 	LWord      string
-	Win        bool
+	Msg        string
 	Lettersusd string
+	Win        bool
 }
 
 var Liifes = 10
-var Word = "banane"
+var Word = backend.ChooseWord()
 var Lword = backend.HideWord(Word)
 var Win = false
-var Lettersused string
+var Lettersused []rune
+var Message string
 
 func EasyMode(w http.ResponseWriter, r *http.Request) {
 	var Letter = r.FormValue("letter")
@@ -52,13 +54,16 @@ func EasyMode(w http.ResponseWriter, r *http.Request) {
 	Win = result.Win
 	Lword = result.LWord
 	Liifes = result.Lifes
+	Lettersused = result.Letters_used
+	Message = result.Message
 
 	if Win == false && Liifes > 0 {
 
 		data := HangmanData{
 			Lifes:      Liifes,
 			LWord:      Lword,
-			Lettersusd: Lettersused,
+			Lettersusd: string(Lettersused),
+			Msg:        Message,
 		}
 
 		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.gohtml"))
@@ -75,7 +80,7 @@ func EasyMode(w http.ResponseWriter, r *http.Request) {
 			fmt.Println(err)
 		}
 
-	} else {
+	} else if Liifes == 0 {
 		data := HangmanData{Lifes: 0, LWord: "You lost"}
 		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.gohtml"))
 		err := templates.Execute(w, data)

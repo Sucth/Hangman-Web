@@ -85,3 +85,16 @@ img {
 h1 {
     color: cyan;
 }
+#Letterused, #msgbox {
+    position: relative;
+    font-size: 18px;
+    left: 15%;
+    border: 2px solid black;
+    width: 220px;
+    height: 25px;
+    text-align: center;
+}
+
+label {
+    font-size: 14px;
+}
