@@ -14,9 +14,26 @@ func Launchserver() {
 	http.HandleFunc("/EasyMode", EasyMode)
 	http.HandleFunc("/MediumMode", MediumMode)
 	http.HandleFunc("/HardMode", HardMode)
+	http.HandleFunc("/Win", WinPage)
+	http.HandleFunc("/Loose", Loose)
 	fmt.Println("Server lancé sur le port 8080 au lien suivant : \n http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
 }
+func WinPage(w http.ResponseWriter, r *http.Request) {
+	var templates = template.Must(template.ParseFiles("Front-end/templates/homePage.gohtml"))
+	err := templates.Execute(w, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+func Loose(w http.ResponseWriter, r *http.Request) {
+	var templates = template.Must(template.ParseFiles("Front-end/templates/homePage.gohtml"))
+	err := templates.Execute(w, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+
 func Accueil(w http.ResponseWriter, r *http.Request) {
 	var templates = template.Must(template.ParseFiles("Front-end/templates/homePage.gohtml"))
 	err := templates.Execute(w, nil)
