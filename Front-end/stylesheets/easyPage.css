@@ -52,6 +52,8 @@ img {
     left: 5%;
 }
 #story {
+    text-align: center;
+    font-size: 22px;
     position: relative;
     top: 10%;
     left: 10%;
@@ -97,4 +99,8 @@ h1 {
 
 label {
     font-size: 14px;
+}
+
+html {
+    overflow-x: auto;
 }

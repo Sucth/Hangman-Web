@@ -1,7 +1,7 @@
 package backend
 
 import (
-	backend "HangmanWeb/hangman-web/back-end/hangmanClassic"
+	backend "HangmanWeb/back-end/hangmanClassic"
 	"fmt"
 	"html/template"
 	"net/http"
@@ -11,27 +11,28 @@ func Launchserver() {
 	http.Handle("/stylesheets/", http.StripPrefix("/stylesheets/", http.FileServer(http.Dir("Front-end/stylesheets"))))
 	http.HandleFunc("/", Accueil)
 	http.HandleFunc("/difficultyPage", difficultyPage)
-	http.HandleFunc("/EasyMode", EasyMode)
-	http.HandleFunc("/MediumMode", MediumMode)
-	http.HandleFunc("/HardMode", HardMode)
+	http.HandleFunc("/Game", Game)
 	http.HandleFunc("/Win", WinPage)
 	http.HandleFunc("/Loose", Loose)
 	fmt.Println("Server lancé sur le port 8080 au lien suivant : \n http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
 }
-func WinPage(w http.ResponseWriter, r *http.Request) {
-	var templates = template.Must(template.ParseFiles("Front-end/templates/homePage.gohtml"))
-	err := templates.Execute(w, nil)
-	if err != nil {
-		fmt.Println(err)
-	}
-}
-func Loose(w http.ResponseWriter, r *http.Request) {
-	var templates = template.Must(template.ParseFiles("Front-end/templates/homePage.gohtml"))
-	err := templates.Execute(w, nil)
-	if err != nil {
-		fmt.Println(err)
-	}
+
+var Liifes = 10
+var Word string
+var Lword string
+var Win = false
+var Lettersused []rune
+var Message string
+var GameStarted = false
+var diff string
+
+type HangmanData struct {
+	Lifes      int
+	LWord      string
+	Msg        string
+	Lettersusd string
+	Difficulty string
 }
 
 func Accueil(w http.ResponseWriter, r *http.Request) {
@@ -43,29 +44,45 @@ func Accueil(w http.ResponseWriter, r *http.Request) {
 }
 
 func difficultyPage(w http.ResponseWriter, r *http.Request) {
-	var templates = template.Must(template.ParseFiles("Front-end/templates/pageDifficulty.gohtml"))
-	err := templates.Execute(w, nil)
-	if err != nil {
-		fmt.Println(err)
+
+	if r.FormValue("difficulty") == "1" {
+		Word = backend.ChooseWord("back-end/data/words/easyWords.txt")
+		Lword = backend.HideWord(Word)
+		http.Redirect(w, r, "/Game", http.StatusFound)
+	} else if r.FormValue("difficulty") == "2" {
+		Word = backend.ChooseWord("back-end/data/words/hardWords.txt")
+		Lword = backend.HideWord(Word)
+		http.Redirect(w, r, "/Game", http.StatusFound)
+	} else if r.FormValue("difficulty") == "3" {
+		Word = backend.ChooseWord("back-end/data/words/mediumWords.txt")
+		Lword = backend.HideWord(Word)
+		http.Redirect(w, r, "/Game", http.StatusFound)
+	} else {
+		var templates = template.Must(template.ParseFiles("Front-end/templates/pageDifficulty.gohtml"))
+		err := templates.Execute(w, nil)
+		if err != nil {
+			fmt.Println(err)
+		}
 	}
 }
 
-type HangmanData struct {
-	Lifes      int
-	LWord      string
-	Msg        string
-	Lettersusd string
-	Win        bool
-}
-
-var Liifes = 10
-var Word = backend.ChooseWord()
-var Lword = backend.HideWord(Word)
-var Win = false
-var Lettersused []rune
-var Message string
-
-func EasyMode(w http.ResponseWriter, r *http.Request) {
+func Game(w http.ResponseWriter, r *http.Request) {
+	if !GameStarted {
+		if r.PostFormValue("difficulty") == "1" {
+			Word = backend.ChooseWord("back-end/data/words/easyWords.txt")
+			Lword = backend.HideWord(Word)
+			diff = "1"
+		} else if r.PostFormValue("difficulty") == "2" {
+			Word = backend.ChooseWord("back-end/data/words/hardWords.txt")
+			Lword = backend.HideWord(Word)
+			diff = "2"
+		} else if r.PostFormValue("difficulty") == "3" {
+			Word = backend.ChooseWord("back-end/data/words/mediumWords.txt")
+			Lword = backend.HideWord(Word)
+			diff = "3"
+		}
+	}
+	GameStarted = true
 	var Letter = r.FormValue("letter")
 	result := backend.Script(Liifes, Lword, Word, Letter, Lettersused)
 	Win = result.Win
@@ -81,43 +98,43 @@ func EasyMode(w http.ResponseWriter, r *http.Request) {
 			LWord:      Lword,
 			Lettersusd: string(Lettersused),
 			Msg:        Message,
+			Difficulty: diff,
 		}
 
-		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.gohtml"))
+		var templates = template.Must(template.ParseFiles("Front-end/templates/pageGame.gohtml"))
 		err := templates.Execute(w, data)
 		if err != nil {
 			fmt.Println(err)
 		}
 
 	} else if Win == true {
-		data := HangmanData{Win: true, LWord: "You Won !"}
-		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.gohtml"))
-		err := templates.Execute(w, data)
-		if err != nil {
-			fmt.Println(err)
-		}
+		http.Redirect(w, r, "/Win", http.StatusFound)
 
 	} else if Liifes == 0 {
-		data := HangmanData{Lifes: 0, LWord: "You lost"}
-		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.gohtml"))
-		err := templates.Execute(w, data)
-		if err != nil {
-			fmt.Println(err)
-		}
+		http.Redirect(w, r, "/Loose", http.StatusFound)
 	}
 
 }
 
-func MediumMode(w http.ResponseWriter, r *http.Request) {
-	var templates = template.Must(template.ParseFiles("Front-end/templates/pageMedium.gohtml"))
+func WinPage(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "post" {
+		resetvariables()
+		http.Redirect(w, r, "/", http.StatusFound)
+	}
+	var templates = template.Must(template.ParseFiles("Front-end/templates/Win.gohtml"))
 	err := templates.Execute(w, nil)
 	if err != nil {
 		fmt.Println(err)
 	}
 }
 
-func HardMode(w http.ResponseWriter, r *http.Request) {
-	var templates = template.Must(template.ParseFiles("Front-end/templates/pageHard.gohtml"))
+func Loose(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "post" {
+		resetvariables()
+		http.Redirect(w, r, "/", http.StatusFound)
+	}
+
+	var templates = template.Must(template.ParseFiles("Front-end/templates/Lose.gohtml"))
 	err := templates.Execute(w, nil)
 	if err != nil {
 		fmt.Println(err)

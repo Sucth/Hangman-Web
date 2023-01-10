@@ -6,21 +6,24 @@
     <meta charset="UTF-8">
     <title>Hangman-Difficuty</title>
 </head>
-<style>
-    body {
-        width: 1450px;
-        height: 825px;
-        margin: 0 auto;
-        background: #000 url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png");
-        padding: 0 20px 20px 20px;
-        border: 5px solid yellow;
-    }
-</style>
 <body>
+<form method="post" action="/Game">
+
 <div style="display: inline-block">
-    <a href="/EasyMode" id="easy">EASY</a>
-    <a href="/MediumMode" id="medium">MEDIUM</a>
-    <a href="/HardMode" id="hard">HARD</a>
+
+    <label for="Easy" id="easy">EASY</label>
+    <input type="radio"  id="Easy" value="1" name="difficulty">
+    <label for="Medium" id="medium" >MEDIUM</label>
+    <input type="radio"  id="Medium" value="2" name="difficulty">
+    <label for="Hard" id="hard">HARD</label>
+    <input type="radio"  id="Hard" value="3" name="difficulty">
+
+
 </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <button type="submit" >Valider ! </button>
+
+</form>
+
 </body>
 </html>

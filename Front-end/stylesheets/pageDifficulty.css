@@ -1,10 +1,4 @@
-.byline {
-    color: #fff;
-    font-size: 2.25em;
-    left: 1000px;
-    letter-spacing: 0.4em;
 
-}
 #thg {
     position: relative;
     left: 15%;
@@ -109,7 +103,7 @@ img {
     left: 120px;
     top: 50px
 }
-div {
+form {
     position: relative;
     top: 40%;
     left: 17%;
@@ -117,3 +111,10 @@ div {
 a{
     text-decoration: none;
 }
+button {
+    position: relative;
+    top: 60%;
+    text-align: center;
+}
+
+

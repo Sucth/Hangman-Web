@@ -8,8 +8,8 @@ import (
 	"time"
 )
 
-func ChooseWord() string {
-	file, err := ioutil.ReadFile("back-end/data/words/words.txt")
+func ChooseWord(filename string) string {
+	file, err := ioutil.ReadFile(filename)
 	if err != nil {
 		fmt.Println(err)
 	}
