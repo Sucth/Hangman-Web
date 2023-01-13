@@ -25,6 +25,11 @@
         <button id="select" type="submit">
             SELECT
         </button>
+    <br>
+    <label for="Letterused">Letters Used :</label>
+    <p id="Letterused">{{ .Lettersusd }}</p>
+    <label>Message : </label>
+    <p id="msgbox">{{ .Msg }}</p>
 
 
     </form>
@@ -32,7 +37,7 @@
 </div>
 <div id="life">
     <img src="https://fontmeme.com/permalink/221125/169071ad495f2dffc1dfb7eb2eae9809.png">
-    <h1> Lifes are here {{ .Lifes }} </h1>
+    <h1> {{ .Lifes }} </h1>
 </div>
 <h1 class="larger"> {{ .LWord }} </h1>
 </body>

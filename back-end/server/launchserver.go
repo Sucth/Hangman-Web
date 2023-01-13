@@ -14,9 +14,26 @@ func Launchserver() {
 	http.HandleFunc("/EasyMode", EasyMode)
 	http.HandleFunc("/MediumMode", MediumMode)
 	http.HandleFunc("/HardMode", HardMode)
+	http.HandleFunc("/Win", WinPage)
+	http.HandleFunc("/Loose", Loose)
 	fmt.Println("Server lancé sur le port 8080 au lien suivant : \n http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
 }
+func WinPage(w http.ResponseWriter, r *http.Request) {
+	var templates = template.Must(template.ParseFiles("Front-end/templates/homePage.gohtml"))
+	err := templates.Execute(w, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+func Loose(w http.ResponseWriter, r *http.Request) {
+	var templates = template.Must(template.ParseFiles("Front-end/templates/homePage.gohtml"))
+	err := templates.Execute(w, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+
 func Accueil(w http.ResponseWriter, r *http.Request) {
 	var templates = template.Must(template.ParseFiles("Front-end/templates/homePage.gohtml"))
 	err := templates.Execute(w, nil)
@@ -36,15 +53,17 @@ func difficultyPage(w http.ResponseWriter, r *http.Request) {
 type HangmanData struct {
 	Lifes      int
 	LWord      string
-	Win        bool
+	Msg        string
 	Lettersusd string
+	Win        bool
 }
 
 var Liifes = 10
 var Word = backend.ChooseWord()
 var Lword = backend.HideWord(Word)
 var Win = false
-var Lettersused string
+var Lettersused []rune
+var Message string
 
 func EasyMode(w http.ResponseWriter, r *http.Request) {
 	var Letter = r.FormValue("letter")
@@ -52,13 +71,16 @@ func EasyMode(w http.ResponseWriter, r *http.Request) {
 	Win = result.Win
 	Lword = result.LWord
 	Liifes = result.Lifes
+	Lettersused = result.Letters_used
+	Message = result.Message
 
 	if Win == false && Liifes > 0 {
 
 		data := HangmanData{
 			Lifes:      Liifes,
 			LWord:      Lword,
-			Lettersusd: Lettersused,
+			Lettersusd: string(Lettersused),
+			Msg:        Message,
 		}
 
 		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.gohtml"))
@@ -75,7 +97,7 @@ func EasyMode(w http.ResponseWriter, r *http.Request) {
 			fmt.Println(err)
 		}
 
-	} else {
+	} else if Liifes == 0 {
 		data := HangmanData{Lifes: 0, LWord: "You lost"}
 		var templates = template.Must(template.ParseFiles("Front-end/templates/pageEasy.gohtml"))
 		err := templates.Execute(w, data)
