@@ -2,9 +2,10 @@ body {
     margin: 0 auto;
     width: 1450px;
     height: 600px;
-    background: url("https://i.pinimg.com/originals/f3/8e/41/f38e413a04321ed0f6b848568ddc2650.jpg");
+    background: url("https://images.alphacoders.com/566/thumb-1920-566592.jpg");
     padding: 0 20px 200px 20px;
 }
+
 
 .star {
     animation: star 10s ;
@@ -131,4 +132,24 @@ a{
     text-align: center;
     display: block;
     text-decoration: none;
+}
+.star-wars-banner {
+    color: yellow;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.star-wars-text {
+    font-size: 20px;
+    line-height: 50px;
+    animation: slide-in 3s ease-in-out;
+}
+
+@keyframes slide-in {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
 }

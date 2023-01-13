@@ -53,9 +53,12 @@ body {
     top: 50px
 }
 button {
-    position: relative;
-    bottom: 10%;
-    left: 2%;
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
 }
 a{
     text-decoration: none;
@@ -131,4 +134,25 @@ a{
     text-align: center;
     display: block;
     text-decoration: none;
+}
+
+.star-wars-banner {
+    color: yellow;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.star-wars-text {
+    font-size: 20px;
+    line-height: 50px;
+    animation: slide-in 3s ease-in-out;
+}
+
+@keyframes slide-in {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
 }
