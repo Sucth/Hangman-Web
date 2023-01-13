@@ -50,12 +50,13 @@ func difficultyPage(w http.ResponseWriter, r *http.Request) {
 		Lword = backend.HideWord(Word)
 		http.Redirect(w, r, "/Game", http.StatusFound)
 	} else if r.FormValue("difficulty") == "2" {
-		Word = backend.ChooseWord("back-end/data/words/hardWords.txt")
+		Word = backend.ChooseWord("back-end/data/words/mediumWords.txt")
 		Lword = backend.HideWord(Word)
 		http.Redirect(w, r, "/Game", http.StatusFound)
 	} else if r.FormValue("difficulty") == "3" {
-		Word = backend.ChooseWord("back-end/data/words/mediumWords.txt")
+		Word = backend.ChooseWord("back-end/data/words/hardWords.txt")
 		Lword = backend.HideWord(Word)
+
 		http.Redirect(w, r, "/Game", http.StatusFound)
 	} else {
 		var templates = template.Must(template.ParseFiles("Front-end/templates/pageDifficulty.gohtml"))
@@ -118,9 +119,18 @@ func Game(w http.ResponseWriter, r *http.Request) {
 
 func WinPage(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "post" {
-		resetvariables()
+
 		http.Redirect(w, r, "/", http.StatusFound)
 	}
+	//resetvariables
+	var resetltruseds []rune
+	var resetdiff string
+	Liifes = 10
+	Win = false
+	Lettersused = resetltruseds
+	GameStarted = false
+	diff = resetdiff
+	//
 	var templates = template.Must(template.ParseFiles("Front-end/templates/Win.gohtml"))
 	err := templates.Execute(w, nil)
 	if err != nil {
@@ -130,10 +140,17 @@ func WinPage(w http.ResponseWriter, r *http.Request) {
 
 func Loose(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "post" {
-		resetvariables()
 		http.Redirect(w, r, "/", http.StatusFound)
 	}
-
+	//resetvariable
+	var resetltruseds []rune
+	var resetdiff string
+	Liifes = 10
+	Win = false
+	Lettersused = resetltruseds
+	GameStarted = false
+	diff = resetdiff
+	//
 	var templates = template.Must(template.ParseFiles("Front-end/templates/Lose.gohtml"))
 	err := templates.Execute(w, nil)
 	if err != nil {
