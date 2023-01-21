@@ -9,6 +9,7 @@ body {
     background: #000 url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png");
 
 }
+
 #easy {
     padding: 20px 50px;
     font-size: 1.5rem;
@@ -38,6 +39,7 @@ body {
 #easy:hover::before {
     transform: translate(5px, 5px);
 }
+
 #medium {
     padding: 20px 50px;
     font-size: 1.5rem;
@@ -176,8 +178,6 @@ span:nth-child(2) {
     top: 12%;
 }
 
-/**************SVG****************/
-
 path.one {
     transition: 0.4s;
     transform: translateX(-60%);
@@ -201,8 +201,6 @@ path.two {
     transform: translateX(0%);
     animation: color_anim 1s infinite 0.4s;
 }
-
-/* SVG animations */
 
 @keyframes color_anim {
     0% {
