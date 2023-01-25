@@ -29,51 +29,78 @@
         <button id="select" type="submit">
             SELECT
         </button>
-    <br>
-    <label for="Letterused">Letters Used :</label>
-    <p id="Letterused">{{ .Lettersusd }}</p>
-    <label>Message : </label>
-    <p id="msgbox">{{ .Msg }}</p>
+        <br>
+        <label for="Letterused">Letters Used :</label>
+        <p id="Letterused">{{ .Lettersusd }}</p>
+        <label>Message : </label>
+        <p id="msgbox">{{ .Msg }}</p>
 
 
     </form>
+    {{ if eq .Lifes 10 }}
+    <div id="life">
+        <img src="http://212.83.166.50/HangmanWeb/lives_10.png">
 
 
+    </div>
 
 
 </div>
 <div id="hangman">
-<p id="hang1">_____</p>
-<p id="hang2">______</p>
-<p id="hang3">______</p>
-<p id="hang4">---</p>
-<p id="hang5">0</p>
-<p id="hang6">|</p>
-<p id="hang7">/</p>
-<p id="hang8">_</p>
-<p id="hang9">_</p>
-<p id="hang10">\</p>
+    <p id="hang1">_____</p>
+    <p id="hang2">______</p>
+    <p id="hang3">______</p>
+    <p id="hang4">---</p>
+    <p id="hang5">0</p>
+    <p id="hang6">|</p>
+    <p id="hang7">/</p>
+    <p id="hang8">_</p>
+    <p id="hang9">_</p>
+    <p id="hang10">\</p>
 </div>
 
-<div id="life">
-    <img src="https://fontmeme.com/permalink/221125/169071ad495f2dffc1dfb7eb2eae9809.png">
-
-    <h1> {{ .Lifes }} </h1>
-</div>
+{{ else if eq .Lifes 9 }}
+    <div id="life">
+        <img src="http://212.83.166.50/HangmanWeb/lives_9.png">
+    </div>
+{{ else if eq .Lifes 8 }}
+    <div id="life">
+        <img src="http://212.83.166.50/HangmanWeb/lives_8.png">
+    </div>
+{{ else if eq .Lifes 7 }}
+    <div id="life">
+        <h1>asopjpazoed</h1>
+        <img src="http://212.83.166.50/HangmanWeb/lives_7.png">
+    </div>
+{{ else if eq .Lifes 6 }}
+    <div id="life">
+        <img src="http://212.83.166.50/HangmanWeb/lives_6.png">
+    </div>
+{{ else if eq .Lifes 5 }}
+    <div id="life">
+        <img src="http://212.83.166.50/HangmanWeb/lives_5.png">
+    </div>
+{{ else if eq .Lifes 4 }}
+    <div id="life">
+        <img src="http://212.83.166.50/HangmanWeb/lives_4.png">
+    </div>
+{{ else if eq .Lifes 3 }}
+    <div id="life">
+        <img src="http://212.83.166.50/HangmanWeb/lives_3.png">
+    </div>
+{{ else if eq .Lifes 2 }}
+    <div id="life">
+        <img src="http://212.83.166.50/HangmanWeb/lives_2.png">
+    </div>
+{{ else if eq .Lifes 1 }}
+    <div id="life">
+        <img src="http://212.83.166.50/HangmanWeb/life_1.png">
+    </div>
+{{ end }}
 <h1 class="larger"> {{ .LWord }} </h1>
 </body>
 </html>
 
 <!--
-10: https://fontmeme.com/temporary/79279bd4913d13f9c4985dafdf88d36e.png
-9:  https://fontmeme.com/temporary/c7985ca94c38b5ed580451cf315c5be8.png
-8:  https://fontmeme.com/temporary/5a55194b285456531128957e0b8dc17f.png
-7:  https://fontmeme.com/temporary/378244db671d551a3dd99f3d4b140d72.png
-6:  https://fontmeme.com/temporary/a310b7f26a03dabd2b2a3177d7dcd50c.png
-5:  https://fontmeme.com/temporary/3b1b58ca8a045a48cf5e3543e20c67f9.png
-4:  https://fontmeme.com/temporary/7d9b5e6484c42f66985ad5d9b563ebe1.png
-3:  https://fontmeme.com/temporary/1f3653662541570cb39b751c4040a5d1.png
-2:  https://fontmeme.com/temporary/d0705c7bd7083fdcb1b5b6f50d5b4566.png
-1:  https://fontmeme.com/temporary/95cfd1e00adc76862fe7d3e12a070ddb.png
-0:  https://fontmeme.com/temporary/052c70381e83f586346d1f347844ac83.png
->
+http://objectifboxe.fr/HangmanWeb/life_0.png...
+-->
