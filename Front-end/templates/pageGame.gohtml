@@ -21,6 +21,8 @@
 <body>
 
 
+<h1 class="larger"> {{ .LWord }} </h1>
+
 
 <div id="chooseword" >
     <p id="p">CHOOSE WORD</p>
@@ -43,21 +45,8 @@
 
 
     </div>
-
-
 </div>
-<div id="hangman">
-    <p id="hang1">_____</p>
-    <p id="hang2">______</p>
-    <p id="hang3">______</p>
-    <p id="hang4">---</p>
-    <p id="hang5">0</p>
-    <p id="hang6">|</p>
-    <p id="hang7">/</p>
-    <p id="hang8">_</p>
-    <p id="hang9">_</p>
-    <p id="hang10">\</p>
-</div>
+
 
 {{ else if eq .Lifes 9 }}
     <div id="life">
@@ -97,7 +86,30 @@
         <img src="http://212.83.166.50/HangmanWeb/life_1.png">
     </div>
 {{ end }}
-<h1 class="larger"> {{ .LWord }} </h1>
+
+
+
+<img id="base1" src="http://objectifboxe.fr/HangmanWeb/9_lifes.png">
+
+<img src="http://objectifboxe.fr/HangmanWeb/8_lifes.png">
+
+<img src="http://objectifboxe.fr/HangmanWeb/7_lifes.png">
+
+<img src="http://objectifboxe.fr/HangmanWeb/6_lifes.png">
+
+<img src="http://objectifboxe.fr/HangmanWeb/5_lifes.png">
+
+<img src="http://objectifboxe.fr/HangmanWeb/4_lifes.png">
+
+<img src="http://objectifboxe.fr/HangmanWeb/3_lifes.png">
+
+<img src="http://objectifboxe.fr/HangmanWeb/2_lifes.png">
+
+<img src="http://objectifboxe.fr/HangmanWeb/1_lifes.png">
+
+<img src="http://objectifboxe.fr/HangmanWeb/0_lifes.png">
+
+
 </body>
 </html>
 

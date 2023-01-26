@@ -48,7 +48,7 @@ img {
 }
 #chooseword {
     position: relative;
-    top: 10%;
+    bottom: 90px;
     left: 5%;
 }
 #story {
@@ -78,7 +78,8 @@ img {
 }
 .larger {
     position: relative;
-    bottom: 330vh;
+    top: 550px;
+    left: 200px;
     font-size: xxx-large;
     letter-spacing: 15px;
     color: cyan;
@@ -104,79 +105,14 @@ html {
     overflow-x: auto;
 }
 
-#hangman {
+#life {
     position: relative;
-    bottom: 50%;
-    left: 65%;
 
 }
 
-#hang1 {
-    color: yellow;
-    font-size: 15vh;
+#base1 {
     position: relative;
-    top: 25vh;
+    bottom: 20vh;
+
 }
-#hang2 {
-    color: yellow;
-    font-size: 15vh;
-    position: relative;
-    top: 39vh;
-    right: 50vh;
-    rotate: 90deg;
-}
-#hang3 {
-    color: yellow;
-    font-size: 15vh;
-    position: relative;
-    bottom: 85vh;
-    right: 7vh;
-}
-#hang4 {
-    color: yellow;
-    font-size: 7vh;
-    position: relative;
-    bottom: 21vh;
-    right: 85vh;
-    rotate: 90deg;
-}
-#hang5 {
-    color: yellow;
-    font-size: 15vh;
-    position: relative;
-    bottom: 122vh;
-    right: 3.5vh;
-}
-#hang6 {
-    color: yellow;
-    font-size: 15vh;
-    position: relative;
-    bottom: 144vh;
-    right: 1.5vh;
-}
-#hang7 {
-    color: yellow;
-    font-size: 15vh;
-    position: relative;
-    bottom: 167vh;
-    right: 4vh;
-}
-#hang8 {
-    color: yellow;
-    font-size: 15vh;
-    position: relative;
-    bottom: 218vh;
-    right: 7vh;
-}
-#hang9 {
-    color: yellow;
-    font-size: 15vh;
-    position: relative;
-    bottom: 250vh;
-}
-#hang10 {
-    color: yellow;
-    font-size: 15vh;
-    position: relative;
-    bottom: 263vh;
-}
+
