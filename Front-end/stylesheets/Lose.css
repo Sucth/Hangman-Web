@@ -53,12 +53,9 @@ body {
     top: 50px
 }
 button {
-    position: fixed;
-    height: 100px;
-    width: 100%;
-    top: 0;
-    left: 0;
-    text-align: center;
+    position: center;
+    bottom: 10%;
+    left: 2%;
 }
 a{
     text-decoration: none;
@@ -134,6 +131,11 @@ a{
     text-align: center;
     display: block;
     text-decoration: none;
+}
+
+#the {
+    height: 40%;
+    width: 40%;
 }
 
 .star-wars-banner {

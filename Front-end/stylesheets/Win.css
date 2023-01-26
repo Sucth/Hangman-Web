@@ -153,3 +153,8 @@ a{
     from { transform: translateY(-100%); }
     to { transform: translateY(0); }
 }
+
+#the {
+    height: 40%;
+    width: 40%;
+}

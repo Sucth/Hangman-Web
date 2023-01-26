@@ -1,8 +1,1 @@
 reve
-bateau
-cheval
-table
-pendu
-groupe
-forum
-python
