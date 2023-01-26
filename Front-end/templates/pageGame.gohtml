@@ -21,8 +21,6 @@
 <body>
 
 
-<h1 class="larger"> {{ .LWord }} </h1>
-
 
 <div id="chooseword" >
     <p id="p">CHOOSE WORD</p>
@@ -36,31 +34,28 @@
         <p id="Letterused">{{ .Lettersusd }}</p>
         <label>Message : </label>
         <p id="msgbox">{{ .Msg }}</p>
-
-
     </form>
+</div>
     {{ if eq .Lifes 10 }}
     <div id="life">
         <img src="http://212.83.166.50/HangmanWeb/lives_10.png">
-
-
     </div>
-</div>
-
-
+        <!-- Pas d'images pour le stickman -->
 {{ else if eq .Lifes 9 }}
     <div id="life">
         <img src="http://212.83.166.50/HangmanWeb/lives_9.png">
     </div>
+        <img src="http://212.83.166.50/HangmanWeb/9_lifes.png">
 {{ else if eq .Lifes 8 }}
     <div id="life">
         <img src="http://212.83.166.50/HangmanWeb/lives_8.png">
     </div>
+    <img src="http://212.83.166.50/HangmanWeb/8_lifes.png">
 {{ else if eq .Lifes 7 }}
     <div id="life">
-        <h1>asopjpazoed</h1>
         <img src="http://212.83.166.50/HangmanWeb/lives_7.png">
     </div>
+    <img src="http://212.83.166.50/HangmanWeb/7_lifes.png">
 {{ else if eq .Lifes 6 }}
     <div id="life">
         <img src="http://212.83.166.50/HangmanWeb/lives_6.png">
@@ -69,47 +64,29 @@
     <div id="life">
         <img src="http://212.83.166.50/HangmanWeb/lives_5.png">
     </div>
+    <img src="http://212.83.166.50/HangmanWeb/5_lifes.png">
 {{ else if eq .Lifes 4 }}
     <div id="life">
         <img src="http://212.83.166.50/HangmanWeb/lives_4.png">
     </div>
+    <img src="http://212.83.166.50/HangmanWeb/4_lifes.png">
 {{ else if eq .Lifes 3 }}
     <div id="life">
         <img src="http://212.83.166.50/HangmanWeb/lives_3.png">
     </div>
+    <img src="http://212.83.166.50/HangmanWeb/3_lifes.png">
 {{ else if eq .Lifes 2 }}
     <div id="life">
         <img src="http://212.83.166.50/HangmanWeb/lives_2.png">
     </div>
+    <img src="http://212.83.166.50/HangmanWeb/2_lifes.png">
 {{ else if eq .Lifes 1 }}
     <div id="life">
         <img src="http://212.83.166.50/HangmanWeb/life_1.png">
     </div>
+    <img src="http://212.83.166.50/HangmanWeb/1_lifes.png">
 {{ end }}
-
-
-
-<img id="base1" src="http://objectifboxe.fr/HangmanWeb/9_lifes.png">
-
-<img src="http://objectifboxe.fr/HangmanWeb/8_lifes.png">
-
-<img src="http://objectifboxe.fr/HangmanWeb/7_lifes.png">
-
-<img src="http://objectifboxe.fr/HangmanWeb/6_lifes.png">
-
-<img src="http://objectifboxe.fr/HangmanWeb/5_lifes.png">
-
-<img src="http://objectifboxe.fr/HangmanWeb/4_lifes.png">
-
-<img src="http://objectifboxe.fr/HangmanWeb/3_lifes.png">
-
-<img src="http://objectifboxe.fr/HangmanWeb/2_lifes.png">
-
-<img src="http://objectifboxe.fr/HangmanWeb/1_lifes.png">
-
-<img src="http://objectifboxe.fr/HangmanWeb/0_lifes.png">
-
-
+<h1 class="larger"> {{ .LWord }} </h1>
 </body>
 </html>
 
