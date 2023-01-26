@@ -4,7 +4,6 @@
     width: 350px;
     height: 400px;
     background-color:cyan;
-
 }
 #inchoose {
     border: groove 1em white;
@@ -15,7 +14,7 @@
 }
 
 #select {
-    background-image: linear-gradient(to right, deepskyblue 0%, lightskyblue  51%, cyan  100%);
+    background-image: linear-gradient(to right, deepskyblue 0%, cyan  51%, blue  100%);
     margin: 10px;
     padding: 15px 45px;
     text-align: center;
@@ -29,7 +28,6 @@
 #select:hover {
     background-position: right center;
 }
-
 #thg {
     position: relative;
     left: 15%;
@@ -48,12 +46,10 @@ img {
 }
 #chooseword {
     position: relative;
-    bottom: 90px;
+    top: 10%;
     left: 5%;
 }
 #story {
-    text-align: center;
-    font-size: 22px;
     position: relative;
     top: 10%;
     left: 10%;
@@ -71,14 +67,10 @@ img {
     top: 1%;
     left: 29%;
 }
-#life {
-    position: relative;
-    bottom: 370vh;
-    left: 25%;
-}
+
 .larger {
-    position: relative;
-    top: 550px;
+    position: fixed;
+    bottom: 15vh;
     left: 200px;
     font-size: xxx-large;
     letter-spacing: 15px;
@@ -87,6 +79,7 @@ img {
 h1 {
     color: cyan;
 }
+
 #Letterused, #msgbox {
     position: relative;
     font-size: 18px;
@@ -107,12 +100,23 @@ html {
 
 #life {
     position: relative;
-
+    height: 50%;
+    width: 50%;
+    bottom: 45vh;
+    left: 45vh;
 }
-
-#base1 {
+#posstick {
     position: relative;
-    bottom: 20vh;
-
+    bottom: 95vh;
+    left: 70vh;
 }
 
+#stickman{
+    height: 60%;
+    width: 75%;
+}
+
+#lifehang {
+    height: 25%;
+    width: 50%;
+}

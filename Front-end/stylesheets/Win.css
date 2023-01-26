@@ -53,9 +53,9 @@ body {
     top: 50px
 }
 button {
-    position: relative;
+    position: center;
     bottom: 10%;
-    left: 12%;
+    left: 8%;
 }
 a{
     text-decoration: none;
@@ -131,4 +131,9 @@ a{
     text-align: center;
     display: block;
     text-decoration: none;
+}
+
+#the {
+    height: 40%;
+    width: 40%;
 }
