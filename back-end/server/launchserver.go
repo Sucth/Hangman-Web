@@ -44,26 +44,10 @@ func Accueil(w http.ResponseWriter, r *http.Request) {
 }
 
 func difficultyPage(w http.ResponseWriter, r *http.Request) {
-
-	if r.FormValue("difficulty") == "1" {
-		Word = backend.ChooseWord("back-end/data/words/easyWords.txt")
-		Lword = backend.HideWord(Word)
-		http.Redirect(w, r, "/Game", http.StatusFound)
-	} else if r.FormValue("difficulty") == "2" {
-		Word = backend.ChooseWord("back-end/data/words/mediumWords.txt")
-		Lword = backend.HideWord(Word)
-		http.Redirect(w, r, "/Game", http.StatusFound)
-	} else if r.FormValue("difficulty") == "3" {
-		Word = backend.ChooseWord("back-end/data/words/hardWords.txt")
-		Lword = backend.HideWord(Word)
-
-		http.Redirect(w, r, "/Game", http.StatusFound)
-	} else {
-		var templates = template.Must(template.ParseFiles("Front-end/templates/pageDifficulty.gohtml"))
-		err := templates.Execute(w, nil)
-		if err != nil {
-			fmt.Println(err)
-		}
+	var templates = template.Must(template.ParseFiles("Front-end/templates/pageDifficulty.gohtml"))
+	err := templates.Execute(w, nil)
+	if err != nil {
+		fmt.Println(err)
 	}
 }
 
