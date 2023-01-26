@@ -58,11 +58,11 @@ func Game(w http.ResponseWriter, r *http.Request) {
 			Lword = backend.HideWord(Word)
 			diff = "1"
 		} else if r.PostFormValue("difficulty") == "2" {
-			Word = backend.ChooseWord("back-end/data/words/hardWords.txt")
+			Word = backend.ChooseWord("back-end/data/words/mediumWords.txt")
 			Lword = backend.HideWord(Word)
 			diff = "2"
 		} else if r.PostFormValue("difficulty") == "3" {
-			Word = backend.ChooseWord("back-end/data/words/mediumWords.txt")
+			Word = backend.ChooseWord("back-end/data/words/hardWords.txt")
 			Lword = backend.HideWord(Word)
 			diff = "3"
 		}
