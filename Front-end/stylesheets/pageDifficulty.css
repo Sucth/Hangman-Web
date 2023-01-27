@@ -1,0 +1,309 @@
+
+#thg {
+    position: relative;
+    left: 15%;
+}
+body {
+    width: 1450px;
+    height: 825px;
+    background: #000 url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png");
+}
+#easy {
+    padding: 20px 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 0;
+    color: white;
+    background: transparent;
+    position: relative;
+    margin-right: 200px;
+    transition: all .25s;
+}
+#easy::after,#easy::before {
+    border: 5px solid cyan;
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    bottom: 0px;
+    transition: all .25s;
+}
+#easy:hover::after {
+    transform: translate(-5px, -5px);
+}
+#easy:hover::before {
+    transform: translate(5px, 5px);
+}
+#medium {
+    padding: 20px 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 0;
+    color: white;
+    background: transparent;
+    position: relative;
+    margin-right: 100px;
+    transition: all .25s;
+}
+#medium::after,#medium::before {
+    border: 5px solid blueviolet;
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    bottom: 0px;
+    transition: all .25s;
+}
+#medium:hover::after {
+    transform: translate(-5px, -5px);
+}
+#medium:hover::before {
+    transform: translate(5px, 5px);
+}
+#hard {
+    padding: 20px 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 0;
+    color: white;
+    background: transparent;
+    position: relative;
+    margin-left: 100px;
+    transition: all .25s;
+}
+#hard::after,#hard::before {
+    border: 5px solid red;
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    bottom: 0px;
+    transition: all .25s;
+}
+#hard:hover::after {
+    transform: translate(-5px, -5px);
+}
+#hard:hover::before {
+    transform: translate(5px, 5px);
+}
+
+
+img {
+    position: relative ;
+    left: 120px;
+    top: 50px
+}
+form {
+    position: relative;
+    top: 40%;
+    left: 17%;
+}
+a{
+    text-decoration: none;
+}
+button {
+    position: relative;
+    text-align: center;
+}
+.start {
+    background-color: blue;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+}
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+.wrapper {
+    display: flex;
+    position: relative;
+    left: 26%;
+    top: 10%;
+}
+.cta {
+    display: flex;
+    padding: 10px 45px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color: white;
+    background: #6225E6;
+    transition: 1s;
+    box-shadow: 6px 6px 0 black;
+    transform: skewX(-15deg);
+    cursor: pointer;
+}
+.cta:focus {
+    outline: none;
+}
+.cta:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 #FBC638;
+}
+.cta span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 0px;
+}
+.cta:hover  span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 45px;
+}
+span {
+    transform: skewX(15deg)
+}
+span:nth-child(2) {
+    width: 20px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+}
+path.one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+path.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+.cta:hover path.three {
+    animation: color_anim 1s infinite 0.2s;
+}
+.cta:hover path.one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+.cta:hover path.two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+@keyframes color_anim {
+    0% {
+        fill: white;
+    }
+    50% {
+        fill: #FBC638;
+    }
+    100% {
+        fill: white;
+    }
+}
+
+/*leaderboard*/
+
+.starwarsbutton,
+.starwarsbutton:after {
+    width: 150px;
+    height: 76px;
+    line-height: 78px;
+    font-size: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    box-shadow: 6px 0px 0px #00E6F6;
+    outline: transparent;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+}
+
+.starwarsbutton:after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+
+    content: 'ALTERNATE TEXT';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+    text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+    clip-path: var(--slice-0);
+}
+
+.starwarsbutton:hover:after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+    0% {
+        clip-path: var(--slice-1);
+        transform: translate(-20px, -10px);
+    }
+    10% {
+        clip-path: var(--slice-3);
+        transform: translate(10px, 10px);
+    }
+    20% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 10px);
+    }
+    30% {
+        clip-path: var(--slice-3);
+        transform: translate(0px, 5px);
+    }
+    40% {
+        clip-path: var(--slice-2);
+        transform: translate(-5px, 0px);
+    }
+    50% {
+        clip-path: var(--slice-3);
+        transform: translate(5px, 0px);
+    }
+    60% {
+        clip-path: var(--slice-4);
+        transform: translate(5px, 10px);
+    }
+    70% {
+        clip-path: var(--slice-2);
+        transform: translate(-10px, 10px);
+    }
+    80% {
+        clip-path: var(--slice-5);
+        transform: translate(20px, -10px);
+    }
+    90% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 0px);
+    }
+    100% {
+        clip-path: var(--slice-1);
+        transform: translate(0);
+    }
+}
+
+@media (min-width: 768px) {
+    .starwarsbutton,
+    .starwarsbutton:after {
+        width: 200px;
+        height: 86px;
+        line-height: 88px;
+    }
+}
+
+#leader-button {
+    position: relative;
+    left: 27%;
+    bottom: 6%;
+}
+.form {
+    cursor: pointer;
+}
+input[type="radio"]{
+    opacity: 0%;
+}

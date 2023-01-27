@@ -1,0 +1,123 @@
+#chooseword {
+    border:10px solid blueviolet;
+    border-radius: 10px 40px 40px 10px;
+    width: 350px;
+    height: 400px;
+    background-color:blueviolet;
+}
+#inchoose {
+    border: groove 1em white;
+    border-radius: 2em;
+    width: 250px;
+    height: 50px;
+    background-color: transparent;
+}
+
+#select {
+    background-image: linear-gradient(to right, mediumvioletred 0%, darkviolet  51%, blueviolet  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border-radius: 10px;
+    display: block;
+}
+
+#select:hover {
+    background-position: right center;
+}
+#thg {
+    position: relative;
+    left: 15%;
+}
+body {
+    width: 1485px;
+    height: 750px;
+    margin: 0 auto;
+    background: #000 url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png");
+    padding: 0 20px 20px 20px;
+}
+img {
+    position: relative ;
+    left: 120px;
+    top: 50px
+}
+#chooseword {
+    position: relative;
+    top: 10%;
+    left: 5%;
+}
+#story {
+    position: relative;
+    top: 10%;
+    left: 10%;
+    width: 250px;
+    height: 50px;
+    background-color: blueviolet;
+    font-size: 22px;
+}
+#select {
+    position: relative;
+    top: 20%;
+    left: 22%;
+}
+#p {
+    position: relative;
+    top: 1%;
+    left: 29%;
+}
+
+.larger {
+    position: fixed;
+    bottom: 15vh;
+    left: 200px;
+    font-size: xxx-large;
+    letter-spacing: 15px;
+    color: blueviolet;
+}
+h1 {
+    color: blueviolet;
+}
+
+#Letterused, #msgbox {
+     position: relative;
+     font-size: 18px;
+     left: 15%;
+     border: 2px solid black;
+     width: 220px;
+     height: 25px;
+     text-align: center;
+ }
+
+label {
+    font-size: 14px;
+}
+
+html {
+    overflow-x: auto;
+}
+
+#life {
+    position: relative;
+    height: 50%;
+    width: 50%;
+    bottom: 45vh;
+    left: 45vh;
+}
+#posstick {
+    position: relative;
+    bottom: 95vh;
+    left: 70vh;
+}
+
+#stickman{
+    height: 60%;
+    width: 75%;
+}
+
+#lifehang {
+    height: 25%;
+    width: 50%;
+}

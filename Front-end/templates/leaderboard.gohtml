@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="../stylesheets/leaderboard.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<img src="http://objectifboxe.fr/HangmanWeb/leaderboard.png" id="leader">
+<br><br><br><br><br><br><br><br>
+<form action="/difficultyPage" >
+  <button class="starwarsbutton" type="submit" role="button">PLAY</button>
+</form>
+
+<table id="leaderboard">
+  <tr>
+    <th>Position :</th>
+    <th>Player :</th>
+    <th>Points :</th>
+  </tr>
+  {{range $index, $players := .}}
+    {{ if eq $index 0}}
+    {{ else }}
+  <tr>
+    <td>{{ $index }}</td>
+    <td>{{.Playername}}</td>
+    <td>{{.Pointsnumber}}</td>
+  </tr>
+    {{end}}
+  {{end}}
+</table>
+
+
+
+
+</body>
+</html>
