@@ -1,6 +1,7 @@
 package backend
 
 import (
+	backendd "HangmanWeb/back-end/database"
 	backend "HangmanWeb/back-end/hangmanClassic"
 	"fmt"
 	"html/template"
@@ -18,6 +19,7 @@ func Launchserver() {
 	http.ListenAndServe(":8080", nil)
 }
 
+var Pseudo = "banana"
 var Liifes = 10
 var Word string
 var Lword string
@@ -106,6 +108,9 @@ func WinPage(w http.ResponseWriter, r *http.Request) {
 
 		http.Redirect(w, r, "/", http.StatusFound)
 	}
+
+	backendd.Addscore(Pseudo)
+
 	//resetvariables
 	var resetltruseds []rune
 	var resetdiff string
