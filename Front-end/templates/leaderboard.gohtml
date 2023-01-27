@@ -8,26 +8,30 @@
 </head>
 <body>
 <img src="http://objectifboxe.fr/HangmanWeb/leaderboard.png" id="leader">
+
+<form action="/difficultyPage" >
+  <button class="starwarsbutton" type="submit" role="button">PLAY</button>
+</form>
+
 <table id="leaderboard">
   <tr>
     <th>Position</th>
     <th>Player</th>
     <th>Points</th>
-    <th>Games Played</th>
   </tr>
-  {{range .}}
+  {{range $index, $players := .}}
+    {{ if eq $index 0}}
+    {{ else }}
   <tr>
-    <td>{{.Position}}</td>
-    <td>{{.Player}}</td>
-    <td>{{.Points}}</td>
-    <td>{{.GamesPlayed}}</td>
+    <td>{{ $index }}</td>
+    <td>{{.Playername}}</td>
+    <td>{{.Pointsnumber}}</td>
   </tr>
+    {{end}}
   {{end}}
 </table>
 
-<form action="/difficultyPage" method="get">
-  <button class="starwarsbutton" type="submit" role="button">PLAY</button>
-</form>
+
 
 
 </body>

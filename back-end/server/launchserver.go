@@ -1,7 +1,7 @@
 package backend
 
 import (
-	backendd "HangmanWeb/back-end/database"
+	database "HangmanWeb/back-end/database"
 	backend "HangmanWeb/back-end/hangmanClassic"
 	"fmt"
 	"html/template"
@@ -15,11 +15,12 @@ func Launchserver() {
 	http.HandleFunc("/Game", Game)
 	http.HandleFunc("/Win", WinPage)
 	http.HandleFunc("/Loose", Loose)
+	http.HandleFunc("/leaderBoard", leaderBoard)
 	fmt.Println("Server lancé sur le port 8080 au lien suivant : \n http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
 }
 
-var Pseudo = "banana"
+var Pseudo string
 var Liifes = 10
 var Word string
 var Lword string
@@ -37,6 +38,19 @@ type HangmanData struct {
 	Difficulty string
 }
 
+func leaderBoard(w http.ResponseWriter, r *http.Request) {
+
+	scores1 := database.CollectScores()
+	fmt.Println(scores1)
+	scores := database.SortScore(scores1)
+	fmt.Println(scores)
+	var templates = template.Must(template.ParseFiles("Front-end/templates/leaderboard.gohtml"))
+	err := templates.Execute(w, scores1)
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+
 func Accueil(w http.ResponseWriter, r *http.Request) {
 	var templates = template.Must(template.ParseFiles("Front-end/templates/homePage.gohtml"))
 	err := templates.Execute(w, nil)
@@ -46,6 +60,9 @@ func Accueil(w http.ResponseWriter, r *http.Request) {
 }
 
 func difficultyPage(w http.ResponseWriter, r *http.Request) {
+	if r.PostFormValue("pseudo") != "" {
+		Pseudo = r.PostFormValue("pseudo")
+	}
 	var templates = template.Must(template.ParseFiles("Front-end/templates/pageDifficulty.gohtml"))
 	err := templates.Execute(w, nil)
 	if err != nil {
@@ -109,9 +126,11 @@ func WinPage(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/", http.StatusFound)
 	}
 
-	backendd.Addscore(Pseudo)
+	database.Addscore(Pseudo)
 
 	//resetvariables
+	var resetpseudo string
+	Pseudo = resetpseudo
 	var resetltruseds []rune
 	var resetdiff string
 	Liifes = 10
@@ -132,6 +151,8 @@ func Loose(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/", http.StatusFound)
 	}
 	//resetvariable
+	var resetpseudo string
+	Pseudo = resetpseudo
 	var resetltruseds []rune
 	var resetdiff string
 	Liifes = 10

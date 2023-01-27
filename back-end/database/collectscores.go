@@ -6,8 +6,8 @@ import (
 )
 
 type Scores struct {
-	playername   string
-	pointsnumber int
+	Playername   string
+	Pointsnumber int
 }
 
 func CollectScores() []Scores {
@@ -30,8 +30,8 @@ func CollectScores() []Scores {
 			fmt.Println(err)
 		}
 		result = append(result, Scores{
-			playername:   pseudo,
-			pointsnumber: points,
+			Playername:   pseudo,
+			Pointsnumber: points,
 		})
 	}
 	return result
