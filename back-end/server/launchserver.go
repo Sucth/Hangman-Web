@@ -123,7 +123,7 @@ func WinPage(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/", http.StatusFound)
 	}
 
-	database.Addscore(Pseudo)
+	database.Addscore(Pseudo, diff)
 
 	//resetvariables
 	var resetpseudo string

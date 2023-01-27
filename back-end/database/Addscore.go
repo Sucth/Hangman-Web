@@ -6,7 +6,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func Addscore(Pseudo string) {
+func Addscore(Pseudo string, difficulty string) {
 	var PJ int
 	type Hangman struct {
 		pseudo string
@@ -53,11 +53,24 @@ func Addscore(Pseudo string) {
 			fmt.Println()
 		}
 		defer stmt.Close()
-
-		result, err := stmt.Exec(PJ+1, Pseudo)
-		if err != nil {
-			fmt.Println(err)
-			fmt.Println(result)
+		if difficulty == "1" {
+			result, err := stmt.Exec(PJ+1, Pseudo)
+			if err != nil {
+				fmt.Println(err)
+				fmt.Println(result)
+			}
+		} else if difficulty == "2" {
+			result, err := stmt.Exec(PJ+2, Pseudo)
+			if err != nil {
+				fmt.Println(err)
+				fmt.Println(result)
+			}
+		} else if difficulty == "3" {
+			result, err := stmt.Exec(PJ+3, Pseudo)
+			if err != nil {
+				fmt.Println(err)
+				fmt.Println(result)
+			}
 		}
 	} else {
 		_, err := db.Exec("INSERT INTO players (points, pseudo) VALUES (?, ?)", 1, Pseudo)
