@@ -49,9 +49,9 @@
 
 .starwars-demo {
     height: 17em;
-    left: 50%;
+    left: 55%;
     position: absolute;
-    top: 53%;
+    top: 30%;
     transform: translate(-50%, -50%);
     width: 34em;
 }
@@ -85,9 +85,14 @@ img {
 }
 #the{
     opacity: 0;
+    height: 40%;
+    width: 60%;
 }
 #hangman{
     opacity: 0;
+    height: 40%;
+    width: 100%;
+    right: 10%;
 }
 
 .glow-on-hover {
@@ -172,7 +177,7 @@ body {
 #start{
     position: relative ;
     left: 120px;
-    top: 50px
+    bottom: 30%;
 }
 button {
     position: relative;
@@ -182,4 +187,38 @@ button {
 a{
     text-decoration: none;
     color: white;
+}
+
+.form {
+    position: relative;
+    top: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid white;
+    margin: 0 auto;
+}
+.form input[type='text'] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+.form input[type='submit'] {
+    width: 100%;
+    background-color: yellow;
+    color: black;
+    font-size: large;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.form input[type='submit']:hover {
+    background-color: yellow;
 }
