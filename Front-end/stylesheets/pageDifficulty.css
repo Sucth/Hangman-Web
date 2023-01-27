@@ -92,6 +92,8 @@ body {
 #hard:hover::before {
     transform: translate(5px, 5px);
 }
+
+
 img {
     position: relative ;
     left: 120px;
@@ -192,12 +194,7 @@ path.two {
 }
 
 /*leaderboard*/
-.starwarsbutton{
-    position: relative;
-    left: 45%;
-    bottom: 10%;
-    cursor: pointer;
-}
+
 .starwarsbutton,
 .starwarsbutton:after {
     width: 150px;
@@ -297,4 +294,16 @@ path.two {
         height: 86px;
         line-height: 88px;
     }
+}
+
+#leader-button {
+    position: relative;
+    left: 27%;
+    bottom: 6%;
+}
+.form {
+    cursor: pointer;
+}
+input[type="radio"]{
+    opacity: 0%;
 }
