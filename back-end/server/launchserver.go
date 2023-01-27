@@ -40,12 +40,9 @@ type HangmanData struct {
 
 func leaderBoard(w http.ResponseWriter, r *http.Request) {
 
-	scores1 := database.CollectScores()
-	fmt.Println(scores1)
-	scores := database.SortScore(scores1)
-	fmt.Println(scores)
+	scores := database.SortScore(database.CollectScores())
 	var templates = template.Must(template.ParseFiles("Front-end/templates/leaderboard.gohtml"))
-	err := templates.Execute(w, scores1)
+	err := templates.Execute(w, scores)
 	if err != nil {
 		fmt.Println(err)
 	}

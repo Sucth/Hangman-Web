@@ -1,7 +1,6 @@
 package backend
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -13,6 +12,6 @@ func SortScore(Scorestosort []Scores) []Scores {
 	sort.Slice(Scorestosort, func(i, j int) bool {
 		return Scorestosort[i].Pointsnumber > Scorestosort[j].Pointsnumber
 	})
-	fmt.Println(Scorestosort)
+
 	return Scorestosort
 }

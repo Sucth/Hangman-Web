@@ -5,7 +5,8 @@
     margin: 0 auto;
     text-align: center;
     position: relative;
-    top:40%
+    top:5%;
+    font-size: 28px;
 }
 
 #leaderboard th, td {
@@ -29,7 +30,7 @@ body {
 .starwarsbutton{
     position: relative;
     left: 45%;
-    bottom: 20%;
+    top: 60%;
     cursor: pointer;
 }
 .starwarsbutton,
